@@ -1,0 +1,27 @@
+// Encapsulation is the concept of building data (properties) and methods (function) 
+//together within an Object, allowed the object to control access
+//to its internal data and behavior. This help to hide implementation details
+//and expose only necessary interfaces to interact with the object.
+//in js you can use closure, or symbole to simulate provate member.
+
+function Counter(){
+    let _count = 0;
+
+    this.increment = ()=> _count++;
+
+    this.decrement = () => _count--;
+
+    this.getCount = () => _count;
+}
+
+let counter = new Counter();
+
+console.log(counter.getCount());
+counter.increment();
+counter.increment();
+counter.increment();
+counter.increment();
+counter.increment();
+console.log(counter.getCount());
+counter.decrement();
+console.log(counter.getCount());
